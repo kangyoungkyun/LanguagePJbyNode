@@ -4,12 +4,40 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var loger = require('./logmodule.js');            //로그모듈
+var loger = require('./logmodule.js');                        //로그모듈
+var connection = require('./mysqlconfig.js');                   //mysql 모듈
 
-var indexRouter = require('./routes/index');
+var session = require('express-session');                     //mysql session
+var MySQLStore = require('express-mysql-session')(session);   //mysql session 2
+
+
+var indexRouter = require('./routes/index');                  //라우트 - 인덱스
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+
+
+// var options = {                                         //session을 mysql db에 저장시키기위한 옵션
+//   host	: 'localhost',
+//   port	: 3306,
+//   user	: 'root',
+//   password: 'eorn1145',		                              //데이터베이스 접근 비밀번호
+//   database: 'mydb2'		                                  //데이터베이스의 이름
+//   };
+  
+//   var sessionStore = new MySQLStore(options);           //mysql session을 저장하기 위한 서버
+//   //미들웨어에 셋팅.
+//   app.use(session({
+//     cookie: {
+//       maxAge: 2400000 * 60 * 60 // 쿠키 유효기간 2400시간
+//     },
+//   secret : '1year1billion!!',
+//   resave: true,
+//   saveUninitialized: true,
+//   store: sessionStore
+//   }));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
