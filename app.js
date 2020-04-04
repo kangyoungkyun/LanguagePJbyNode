@@ -12,16 +12,21 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+//html 랜더링
+app.engine('html', require('ejs').renderFile);
+//대소문자 구분하기
+app.set('case sensitive routes', true);                       
 
-
+//미들웨어 설정
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//static 파일 저장 경로
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+//라우터 미들웨어 설정 - / 경로로 들어오면 여기서 모두 처리
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
