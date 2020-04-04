@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>HTML Video Element</title>
+    <!-- 부트스트랩 라이브러리-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+@font-face { font-family: 'GmarketSansLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+        
+        /* body {
+            overflow: hidden;
+
+        } */
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+   /*overflow: hidden;*/ 
+}
+
+/* 뒤로가기 버튼 */
+#fixedbutton {
+    position: fixed;
+    bottom: 130px;
+    left: 10px; 
+}
+
+.boxE_1{
+    /* border: 10px solid pink; */
+    height: auto;
+    width: 100%;
+    background-color: white;
+ }
+ 
+ /* video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+video {
+  width: 100%;
+  height: auto;
+
+}
+
+ .boxD_1{
+   
+    height: 70px;
+    border-top: 2px dashed #E0F0E2;
+    border-left: 2px solid white; 
+    width: 100%;
+   
+   
+ }
+ 
+ .boxC_1{
+ 
+    width: 100%;
+    background-color: white;
+    border-left: 2px solid white; 
+    border-top: 2px dashed #E0F0E2;
+}
+
+
+/**********************/
+
+
+.boxB::after{
+    width: 100%;
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.boxB{
+    border-top: 2px dashed #E0F0E2;
+    height: 60px;
+    /* border-left: 10px solid blueviolet; */
+}
+
+.boxB_1{
+    height: 100%;
+    width: 25%;
+    color: black;
+    background-color: white;
+    float: left;
+
+}
+.boxB_2{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+.boxB_3{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+	
+.boxB_4{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+
+
+/**********************/
+
+
+.boxA::after{
+    width: 100%;
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.boxBottom{
+    height: 10px;
+}
+
+.boxA{
+    height: 60px;
+    /* border-left: 10px solid greenyellow; */
+}
+
+.boxA_1{
+    height: 100%;
+    width: 25%;
+    color: black;
+    background-color: white;
+    float: left;
+
+}
+.boxA_2{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+.boxA_3{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+	
+.boxA_4{
+    height: 100%;
+    width: 25%;
+    float: left;
+    color: black;
+    background-color: white;
+
+    }
+
+
+
+button{
+    font-family: 'GmarketSansLight';
+    margin: 10px;
+}	
+
+div{
+    font-family: 'GmarketSansLight';
+}
+
+/* 자막 , 단어, 한글, 설명 버튼 누르기전 색깔 */
+
+.btn-secondary {
+    background-color: #359a36;
+    border-color: #359a36;
+    color: #FFF; }
+.btn-secondary:hover,
+.btn-secondary:focus {
+    border-color: #359a36;
+    background-color: #359a36;
+    color: #FFF; }
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:active:focus,
+.btn-secondary:active:hover {
+    border-color: #359a36;
+    background-color: #359a36;
+    color: #FFF; }
+
+/* 자막 , 단어, 한글, 설명 버튼 클릭했을때 색깔 */
+.btn-primary {
+    background-color: #fc9cf4;
+    border-color: #fc9cf4;
+    color: #FFF; }
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: #fc9cf4;
+    background-color: #fc9cf4;
+    color: #FFF; }
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:active:focus,
+.btn-primary:active:hover {
+    border-color: #fc9cf4;
+    background-color: #fc9cf4;
+    color: #FFF; }
+
+
+
+
+/* 재생관련 버튼 누르기전 색깔 */
+
+.btn-light {
+    background-color: #FCD240;
+    border-color: #FCD240;
+    color: #FFF; }
+.btn-light:hover,
+.btn-light:focus {
+    border-color: #FCD240;
+    background-color: #FCD240;
+    color: #FFF; }
+.btn-light:active,
+.btn-light:visited,
+.btn-light:active:focus,
+.btn-light:active:hover {
+    border-color: #FCD240;
+    background-color: #FCD240;
+    color: #FFF; }
+
+/* 재생관련 버튼 클릭 후  색깔 */
+.btn-dark {
+    background-color: #3247ff;
+    border-color: #3247ff;
+    color: #FFF; }
+.btn-dark:hover,
+.btn-dark:focus {
+    border-color: #3247ff;
+    background-color: #3247ff;
+    color: #FFF; }
+.btn-dark:active,
+.btn-dark:visited,
+.btn-dark:active:focus,
+.btn-dark:active:hover {
+    border-color: #3247ff;
+    background-color: #3247ff;
+    color: #FFF; }
+
+
+.btn:focus {
+  outline: none;
+}
+
+ video::-webkit-media-controls {
+     display: none;
+}
+
+
+/* 텍스트에어리어 클릭시 파란색 표시 제거 */
+ textarea , textarea:focus , .form-control:focus{
+    outline: none;
+     border: none;
+     border-color: #cccccc; 
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">    
+
+	
+        <div class="boxE_1">
+                <video ontimeupdate="checkTimeUpdate()" id="video" playsinline class="videoInsert" width="100%" poster="./images/videoPoster/person-female-lg.png">
+                    <source src="./videoAboutCh/1/test.mp4" type="video/mp4"/>
+
+                    
+                <track default
+                            src="./trackAboutCh/1/lion2.vtt" 
+                            kind="metadata"
+                            srclang="en"
+                            label="English Captions"/>
+                    
+                    <p><a href="" download>Download the Video</a></p>
+                </video>
+        </div>
+    
+
+         <!-- 자막 라인 -->
+        <div class="boxD_1" style="border-left: white solid 3px;">
+            <!-- <div ><img src="deaf.png" width="8%" height="8%"></div> -->
+            <textarea style="resize: none; height: 100%; width: 100%;" readonly id="trackText"></textarea>
+        </div>
+        
+        <!-- 문장 설명 라인 -->
+        <div class="boxC_1" style="border-left: white solid 5px;">
+            <!-- <div ><img src="class.png" width="8%" height="8%"></div> -->
+            <textarea style="resize: none; height: 100%; width: 100%;" readonly id="myTextArea" ></textarea>
+        </div>
+    
+    
+        <!-- 자막 컨트롤 버튼 -->
+        <div class="boxB">
+            <div class="boxB_4 text-center"><button id="btnShowChinese" class="btn btn-secondary btn-lg" style="font-size:medium;">자  막</button></div>
+            <div class="boxB_1 text-center"><button id="btnShowWord" class="btn btn-secondary btn-lg" style="font-size:medium;">단  어</button></div>
+            <div class="boxB_2 text-center"><button id="btnShowKorean" class="btn btn-secondary btn-lg" style="font-size:medium;">한  글</button></div>
+            <div class="boxB_3 text-center"><button id="btnShowDescription" class="btn btn-secondary btn-lg" style="font-size:medium;">설  명</button></div>
+            
+        </div>
+    
+        
+    
+        <!-- 재생 컨트롤 버튼 -->
+        <div class="boxA">
+            <div class="boxA_1 text-center"><button id="btnPre" class="btn btn-light btn-lg"  style="font-size:smaller;"><img id="btnPreImg" src="./images/icons/left.png" width="45%" height="45%"></button></div>
+            <div class="boxA_2 text-center"><button id="btnPlay" class="btn btn-light btn-lg" style="font-size:smaller;"><img id="btnPlayImg" src="./images/icons/play.png" width="50%" height="50%"></button></div>
+            <div class="boxA_3 text-center"><button id="btnNext" class="btn btn-light btn-lg" style="font-size:smaller;"><img id="btnNextImg" src="./images/icons/right.png" width="45%" height="45%"></button></div>
+            <div class="boxA_4 text-center"><button id="btnLoop" class="btn btn-light btn-lg" style="font-size:smaller;"><img id="btnLoopImg" src="./images/icons/sync.png" width="45%" height="45%"></button></div>
+        </div>
+     
+        <!-- ios 10 이상을 위해서 아래 쪽 좀 뛰워주기 -->
+        <div class="boxBottom">
+        </div>
+
+
+        <!-- 뒤로가기 버튼 -->
+        <a href="#head"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ7HqgxGUPOQfta0A1jLgRq_KLCDZ0bSh0bY_GsAd9MIfQO-adq&usqp=CAU" style="width: 10%;" id="fixedbutton"></a>
+  
+
+    </div>
+    
+
+
+
+    <script>
+
+        var height = document.body.clientHeight;
+        var width = document.body.clientWidth;
+        console.log("window 높이" + height);
+        console.log("window 가로" + width);
+        var h =  document.body.scrollHeight;
+        console.log("scrollHeight : " + h);
+
+       //var playButtonsHeight      =  $( ".boxA" ).height(); 
+       // var settingsButtonsHeight  =  $( ".boxB" ).height(); 
+        //var trackDivHeight         =  $( ".boxD_1" ).height(); 
+        //var VideDivHeight          =  $( ".boxE_1" ).height();
+        
+
+       // var windowHeight = window.innerHeight;
+       // console.log("windowHeight : " + windowHeight);
+       // var DescriptionHeight = windowHeight - playButtonsHeight - settingsButtonsHeight - trackDivHeight - VideDivHeight;
+        //$(".wrap").css('height',windowHeight + "px");
+       // $(".boxC_1").css('height',DescriptionHeight + "px");
+        
+
+       // console.log("playButtonsHeight - 높이 : " + playButtonsHeight);
+       // console.log("settingsButtonsHeight - 높이 : " + settingsButtonsHeight);
+        //console.log("trackDivHeight - 높이 : " + trackDivHeight);
+       //console.log("VideDivHeight - 높이 : " + VideDivHeight);
+        //console.log("설명div - 높이 : " + $(".boxC_1").height());
+        //console.log(DescriptionHeight +   playButtonsHeight + settingsButtonsHeight + trackDivHeight + VideDivHeight);
+        
+
+window.onload = function(event) {
+        console.log("onload 시작 - ");
+        console.log(" 버튼div - 높이 : " + $( ".boxA" ).height());
+        console.log(" 셋팅div - 높이 : " + $( ".boxB" ).height());
+        console.log(" 자막div - 높이 : " + $( ".boxD_1" ).height());
+        console.log(" 비디오 - 높이 : " + $( ".boxE_1" ).height());
+        console.log(" 설명div - 높이 : " + $( ".boxC_1" ).height());
+        
+        
+        var windowHeight2 = window.innerHeight;
+        console.log("windowHeight2 : " + windowHeight2);
+        var cHeight = windowHeight2 - $( ".boxA" ).height() - $( ".boxB" ).height() - $( ".boxD_1" ).height() - $( ".boxE_1" ).height() - $( ".boxBottom" ).height();
+        $(".boxC_1").css('height',cHeight + "px");
+        $(".wrap").css('height',windowHeight2 + "px");
+};
+
+
+window.onresize = function(event) {
+        console.log("onresize 시작 - ");
+        console.log(" 버튼div - 높이 : " + $( ".boxA" ).height());
+        console.log(" 셋팅div - 높이 : " + $( ".boxB" ).height());
+        console.log(" 자막div - 높이 : " + $( ".boxD_1" ).height());
+        console.log(" 비디오 - 높이 : " + $( ".boxE_1" ).height());
+        console.log(" 설명div - 높이 : " + $( ".boxC_1" ).height());
+        
+        
+        var windowHeight2 = window.innerHeight;
+        console.log("windowHeight2 : " + windowHeight2);
+        var cHeight = windowHeight2 - $( ".boxA" ).height() - $( ".boxB" ).height() - $( ".boxD_1" ).height() - $( ".boxE_1" ).height() - $( ".boxBottom" ).height();
+        $(".boxC_1").css('height',cHeight + "px");
+        $(".wrap").css('height',windowHeight2 + "px");
+};
+
+
+  
+
+     /*********************************************************
+                                전역변수 
+        *********************************************************/
+        //비디오 객체 전역변수
+        let vid;
+        //재생중인지 체크
+        let playStatus = false;
+        //무한반복 체크
+        let loopStatus = false;
+        
+
+
+
+        /*  주체 : myTextTrack.addEventListener('cuechange'}  , 버튼 이벤트 함수
+            시기 : 자막이 변할때, 아래 전역 변수를 체크해서 부가정보란에 보여주기 or 안보여주기를 설정한다.  */
+        //중국어 자막 보여주기
+        let showChineseStatus = false;    
+        //한글 보여주기 체크
+        let showKorStatus = false;
+        //단어 보여주기 체크
+        let showWordStatus = false;
+        //설명 보여주기 체크
+        let showDescriptionStatus = false;
+
+
+
+        /********* 현재 재생되고 있는 자막의 큐 정보를 할당할 변수 ***********/
+        /*  할당주체 : myTextTrack.addEventListener('cuechange' 자막변경 감지 이벤트 함수}   , function playSectionByTrackAction(selectedTrackInfo){이전버튼, 다음 버튼 이벤트 함수}    
+            시기    : 위의 이벤트 핸들러 함수가 호출 될때, 즉 자막이 변경될때 아래 변수들의 값이 셋팅, 변경됨.  
+                     startTimeInQue, endTimeInQue 변수는 무한반복 함수에서도 사용됨         */
+        //구간 재싱중인 큐 id
+        let idInQue;
+        //구간 재생시 시작 시간
+        let startTimeInQue;
+        //구간 재생시 마지막 시간
+        let endTimeInQue;
+        //구간 재생시 텍스트  : 자막
+        let textInQue;
+        //구간 재생시 부가정보 : 한글, 단어, 설명
+        let subTextInQue;
+        
+
+
+        /* 할당주체 : trackElements[i].addEventListener("load")    
+           시기    : trackElements가 load 될때, 자막 큐의 정보들을 읽어서 {key:value} 객체 타입으로 만든 후 , trackInfoArray에 push한다.  */
+        //자막 정보 리스트
+        let trackInfoArray = [];
+        //자막 마지막 큐 번호(순번) 
+        let trackLastIndex;  
+        
+        
+        /* 할당주체 : function preAction(){이전 버튼 함수},  function preAction(){이후 버튼 함수},  
+            시기   : 위의 버튼이벤트 함수 호출 및 단어켜기, 한글켜기, 설명켜기 버튼 이벤트 함수가 호출 될때
+                    현재 자막 큐번호를 이용해서 자료구조에서 해당 부가정보 데이터를 가져와서 뿌려준다.            */
+        //현재 자막 트랙 번호 : 1, 2, 3 .... 설명: (이 번호를 이용해서 위에 자막 정보리스트에서 자료를 얻을 수 있다.)
+        let trackNowIndex = 1;
+   
+        //팝업 보여줄 시간
+        let popUpShowTime = 1000;
+
+        /**********************. 전역변수 - end. ******************************/
+        /****************************************************************/
+
+        //초기화 함수 호출
+        document.addEventListener('DOMContentLoaded', init);
+        
+
+        /******************************************************************************************************
+         0.이름    : 초기화 함수
+         1.설명    : 각 엘리먼트에 이벤트 함수 셋팅, 비디오 객체생성, 자막 데이터를 자료구조에 셋팅 등 초기화 작업 진행
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function init(){
+
+
+        console.log("load");
+        var windowHeight = window.innerHeight;
+        console.log("windowHeight : " + windowHeight);
+        $(".wrap").css('height',windowHeight + "px");
+
+        //비디오 객체 할당, 및 초기 설정 셋팅
+        vid = document.getElementById('video');   
+        vid.loop = true;            //무한반복
+        vid.volume = 0.3;           //0 - 1
+            
+            
+            //화면 줌, 이동 금지
+            // window.addEventListener("touchstart", function(event) {
+            //   event.preventDefault();
+            // }, {passive: false});
+            
+            
+            //버튼 엘리먼트에 이벤트 걸어주기
+            
+            document.getElementById('btnShowChinese').addEventListener('click', showChinese);               //자막
+            document.getElementById('btnShowDescription').addEventListener('click', showDescription);       //발음
+            document.getElementById('btnShowKorean').addEventListener('click', showKorean);                 //한글
+            document.getElementById('btnShowWord').addEventListener('click', showWord);                     //단어
+            document.getElementById('btnPre').addEventListener('click', preAction);                         //이전
+            document.getElementById('btnPlay').addEventListener('click', playAction);                       //재생
+            document.getElementById('btnNext').addEventListener('click', nextAction);                       //다음
+            document.getElementById('btnLoop').addEventListener('click', loopAction);                       //반복
+            
+            //자막 큐가 변경될때 감지 후에 , 해당 자막 큐의 정보들을 전역변수에 할당
+            let myTextTrack = vid.textTracks[0];
+            myTextTrack.addEventListener('cuechange', function() {
+                 
+                //무한반복이 꺼져있으면,
+                if(!loopStatus){
+                    //현재 보여지고 있는 자막 큐!
+                    let cue = this.activeCues[0]; 
+                    //활성화된 큐체크 후 해당 큐의 정보 전역변수에 할당 + 화면에 자막보여주기.
+                    if(cue != undefined){
+
+                        //큐 json 텍스트
+                        let cueJson = JSON.parse(cue.text);
+                        console.log("**** addEventListener cuechange - 자막 큐가 변경되었습니다.***");
+                        console.log("cue.id : " + cue.id);
+                        console.log("cue.startTime : " + cue.startTime);
+                        console.log("cue.endTime : " + cue.endTime);
+                        console.log("cueJson.text : " + cueJson.text);
+                        console.log("cueJson.kor : " + cueJson.kor);
+                        console.log("cueJson.word : " + cueJson.word);
+                        console.log("cueJson.description : " + cueJson.description);
+                        console.log("");
+
+                        /*  전역변수에 현재 재생중인 자막의 큐 데이터 셋팅 **/
+                        
+                        //구간 재싱중인 큐 id 전역변수에 할당~~
+                        idInQue = cue.id;
+                        //자료구조의 index 번호 : 현재 자막 번호(순서) 할당
+                        trackNowIndex = Number(idInQue);
+                        //구간 재생시 시작 시간
+                        startTimeInQue = cue.startTime;
+                        //구간 재생시 마지막 시간
+                        endTimeInQue = cue.endTime;
+                        //구간 재생시 자막
+                        textInQue = cueJson.text;
+                        //현재 재생되는 자막보여주기
+                        
+                        
+
+                        //재생시 자막정보 
+                        if(showChineseStatus){ 
+                            document.getElementById('trackText').innerHTML = textInQue; 
+                        }else{
+                            document.getElementById('trackText').innerHTML = ""; 
+                        }
+
+                        //구간 재생시 부가정보 : 한글일때 - 한글보여줌
+                        if(showKorStatus) subTextInQue = cueJson.kor;
+                        //구간 재생시 부가정보 : 단어일때 - 단어보여줌
+                        if(showWordStatus) subTextInQue = cueJson.word; 
+                        //구간 재생시 부가정보 : 설명일때 - 설명보여줌
+                        if(showDescriptionStatus) subTextInQue = cueJson.description; 
+                        //모두다 꺼져있을때 - 부가정보 창 끄기
+                        if(!showKorStatus && !showWordStatus && !showDescriptionStatus) subTextInQue = ""; 
+
+                        //현재 재생되는 부가정보 보여주기
+                        document.getElementById('myTextArea').innerHTML = subTextInQue; 
+
+                        
+                        console.log("*현재 재생중인 큐 id :" + idInQue);
+                        console.log("*현재 재생중인 시작 시간 :" + startTimeInQue);
+                        console.log("*현재 재생중인 마지막 시간 :" + endTimeInQue);
+                        console.log("*현재 재생중인 텍스트 :" + textInQue);
+                        console.log("*현재 재생중인 부가정보 :" + subTextInQue);
+                        console.log("");
+
+                    
+
+                    }
+                }else{
+                        console.log("*** 무한반복이 켜져있습니다: 자막큐 변경 감지 차단 ***");
+                }
+
+            });// cuechange - event 함수 종료
+
+
+            //트랙 객체의 자막 정보를 자료구조에 넣어주기
+            var trackElements = document.querySelectorAll("track");
+            // 각 트랙 엘리먼트에 대해서
+            for (var i = 0; i < trackElements.length; i++) {
+              //트랙 엘리먼트가 load 될때, 이벤트 함수를 통해서 트랙의 아이템 자료구조에 담기
+              trackElements[i].addEventListener("load", function() {
+                    
+                    let textTrack = this.track;                                                              //"this"는 HTMLTrackElement.TextTrack 객체가 아님
+                    textTrack.mode = 'hidden';                                                                //자막 숨김
+                    
+                    // 각 큐에 대해서
+                    for (var j = 0; j < textTrack.cues.length; ++j) {
+                      
+                      // 큐 아이템
+                      let cue = textTrack.cues[j];
+                      //큐 json 텍스트
+                      let cueJson = JSON.parse(cue.text);
+
+
+                      console.log("cue.id : " + cue.id);
+                      console.log("cue.startTime : " + cue.startTime);
+                      console.log("cue.endTime : " + cue.endTime);
+                      console.log("cueJson.text : " + cueJson.text);
+                      console.log("cueJson.kor : " + cueJson.kor);
+                      console.log("cueJson.word : " + cueJson.word);
+                      console.log("cueJson.description : " + cueJson.description);
+                      console.log("");
+                       
+
+                        //해당 자막 내용의 정보객체 - 자료구조
+                        let trackInfoObj = {    index       : cue.id,                                 //자막번호
+                                                startTime   : cue.startTime,                          //시작시간
+                                                endTime     : cue.endTime,                            //종료시간
+                                                text        : cueJson.text,                           //자막
+                                                kor         : cueJson.kor,                            //한글
+                                                word        : cueJson.word,                           //단어
+                                                description : cueJson.description                     //설명
+
+                                            }
+                        //리스트에 넣어주기
+                        console.log("리스트에 넣어줍니다.");                   
+                        trackInfoArray.push(trackInfoObj);
+                        trackLastIndex = textTrack.cues.length;  //자막 큐의 마지막 번호 = 전체 큐 아이템 수
+                        
+
+                    };  //각 큐에 대해서 for - end
+                });// addEventListener - end
+            };// 각 트랙 엘리먼트에 대해서 for - end
+
+        }// init 초기화 함수 끝 - init - end
+        
+
+
+        /******************************************************************************************************
+         0.이름    : 자동 닫힘 얼럿 박스
+         1.설명    : 자동으로 시간이 되면 닫힌다.
+         2.파라미터 : 메세지, 시간
+        *******************************************************************************************************/
+
+        function tempAlert(msg,duration)
+        {
+            var el = document.createElement("div");
+            el.setAttribute("class","alert alert-success");
+            el.setAttribute("style","position:absolute; top:20%; left:50%; transform: translate(-50%, -50%); font-family: GmarketSansLight;");
+            el.innerHTML = msg;
+            setTimeout(function(){
+            el.parentNode.removeChild(el);
+            },duration);
+            document.body.appendChild(el);
+        }
+
+        /******************************************************************************************************
+         0.이름    : 비디오 재생 함수
+         1.설명    : 비디오를 재생시킴 ,재생상태 재생으로 변경,  화면에 재생표시 -> '정지'로 변경
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function playAction(ev){
+
+            //재생중이 아니면 -> 재생
+            if(!playStatus){
+
+                //document.getElementById('btnPlay').innerHTML = "정지";  //재생버튼 -> 정지로 변경
+                $("#btnPlayImg").attr("src","./images/icons/pause.png");
+
+                playStatus = true;  //재생중
+                
+                //커스텀 팝업창
+                tempAlert("재 생",popUpShowTime);
+
+                vid.play()
+                .then(()=>{
+                    console.log('비디오가 재생되고 있습니다.')
+                })
+                .catch((err)=>{
+                    console.log( {err} );
+                });
+
+
+            }else{
+
+                tempAlert("정 지",popUpShowTime);
+
+                 //재생중이면 --> 정지
+                 pauseAction();
+
+
+            } 
+        }
+
+
+        /******************************************************************************************************
+         0.이름    : 비디오 일시정지 함수
+         1.설명    : 비디오를 일시정시시킴 ,재생상태 정지로 변경,  화면에 재생표시 -> '재생'으로 변경
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function pauseAction(){
+                 console.log("일시 정지 함수 진입");
+                 playStatus = false;  //정지
+                 //document.getElementById('btnPlay').innerHTML = "재생";
+                 $("#btnPlayImg").attr("src","./images/icons/play.png");
+                 vid.pause();
+                 console.log( vid.currentTime, "of", vid.duration, "seconds played");    //22.827981 "of" 116.7 "seconds played"
+                 console.log('video is paused. No Promise here');
+
+        }
+
+
+        /******************************************************************************************************
+         0.이름    : 비디오 재생시간 감지 함수
+         1.설명    : 비디오가 재생되는동안, 실시간으로 호출되어, 비디오 현재 상태, 정보를 알려준다.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function checkTimeUpdate(){
+
+             //무한반복이 켜져있으면
+             if(loopStatus){
+                
+                //비디오 재생시간이 설정한 마지막 시간을 넘을때 체크
+                if(vid.currentTime >= endTimeInQue) {
+                   //1.일시정지 후
+                   vid.pause();
+                   //2.비디오 재생시간을 지정된 시작시간으로 셋팅 
+                   vid.currentTime = startTimeInQue;
+                   //3.시작
+                   vid.play();
+                }
+
+             }else{
+
+                //console.log("무한반복이 꺼져있습니다.");
+             }       
+        }        
+
+
+        /******************************************************************************************************
+         0.이름    : 이전 구간 재생 함수
+         1.설명    : 이전 구간 버튼 클릭시, 현재자막 번호를 이용해서 자막 자료구조에서 해당 번호의 큐 객체 조회 및 현재 자막번호 줄여줌.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function preAction(){
+            console.log("###### preAction 이전 재생함수 클릭  #######");
+            console.log("trackNowIndex 이전 : " + trackNowIndex);
+
+            //현재 자막 번호가 1이면
+            if(trackNowIndex <= 1 ){
+                
+                console.log("제일 첫 자막입니다.- 제일 첫번째 자막 보여주기");
+                //현재 자막 index는 제일 첫번째 index
+                trackNowIndex = 1;   
+                
+                var popUpMsg = "(" +  trackNowIndex + "/" + trackLastIndex + ")";
+                //커스텀 팝업창
+                tempAlert(popUpMsg,popUpShowTime);            
+            
+            }else{
+                
+                //현재 자막 번호 하나 줄여주기
+                trackNowIndex = trackNowIndex - 1;
+
+                var popUpMsg = "(" +  trackNowIndex + "/" + trackLastIndex + ")";
+                //커스텀 팝업창
+                tempAlert(popUpMsg,popUpShowTime); 
+
+                console.log("trackNowIndex 이후 : " + trackNowIndex);
+                //선택된 자막 큐 아이템
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];    
+                //구간 재생 함수 호출
+                playSectionByTrackAction(selectedTrackInfo);
+            }
+
+        }
+
+
+        /******************************************************************************************************
+         0.이름    : 다음 구간 재생 함수
+         1.설명    : 다음 구간 버튼 클릭시, 현재자막 번호를 이용해서 자막 자료구조에서 해당 번호의 큐 객체 조회 및 현재 자막번호 늘려줌.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function nextAction(){
+            console.log("#### nextAction 다음 재생함수 클릭  ####");
+            console.log("trackNowIndex 이전 : " + trackNowIndex);
+            
+           //현재 자막 번호가 마지막 큐의번호와 같거나 크면
+            if(trackNowIndex >= trackLastIndex ){
+                
+                console.log("제일 마지막 자막입니다.- 제일 마지막 자막 보여주기");
+                //현재 자막 index = 큐의 제일 마지막 번째 index
+                trackNowIndex = trackLastIndex;  
+                var popUpMsg = "(" +  trackNowIndex + "/" + trackLastIndex + ")";
+                //커스텀 팝업창
+                tempAlert(popUpMsg,popUpShowTime); 
+
+            }else{
+                
+                //현재 자막 번호(순서) 하나 늘려주기
+                trackNowIndex = trackNowIndex + 1;
+                
+                var popUpMsg = "(" +  trackNowIndex + "/" + trackLastIndex + ")";
+                //커스텀 팝업창
+                tempAlert(popUpMsg,popUpShowTime);
+
+                console.log("trackNowIndex 이후 : " + trackNowIndex);
+                //선택된 자막 큐 아이템
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];    
+                //구간 재생 함수 호출
+                playSectionByTrackAction(selectedTrackInfo);
+
+            }
+
+        }
+
+        /******************************************************************************************************
+         0.이름    : 이전 구간, 다음구간 정보 처리 함수
+         1.설명    : 이전, 다음 버튼 클릭시, 해당 자막의 큐 정보(번호,자막,시작시간,종료시간)를 이용해서 비디오 구간 재생, 자막 보여주기 기능 
+         2.파라미터 : 이전, 다음 버튼 클릭시, 선택된 자막 큐 아이템 객체 : selectedTrackInfo
+        *******************************************************************************************************/
+        function playSectionByTrackAction(selectedTrackInfo){
+            console.log("########  playSectionByTrackAction 구간 재생 함수 진입 ########");
+
+
+            let  index = selectedTrackInfo['index'];                    //번호id
+            let  text = selectedTrackInfo['text'];                      //텍스트
+            let  startTime =selectedTrackInfo['startTime'];             //시작시간
+            let  endTime = selectedTrackInfo['endTime'];                //종료시간
+            let  kor = selectedTrackInfo['kor'];                        //한국어    
+            let  word = selectedTrackInfo['word'];                      //단어    
+            let  description = selectedTrackInfo['description'];        //설명        
+
+
+            console.log("자막번호 : " + index);
+            console.log("자막 : "    + text);
+            console.log("시작시간 : " + startTime);
+            console.log("종료시간 : " + endTime);
+            console.log("한국어 : " + kor);
+            console.log("단어 : " + word);
+            console.log("설명 : " + description);
+            console.log("(" +  index +  "/" + (trackLastIndex) + ")");
+
+
+            //비디오에 현재 재생시간 셋팅
+            vid.currentTime = startTime;
+            
+            //구간 재싱중인 큐 id 전역변수에 할당~~
+            idInQue = index;
+            //자료구조의 index 번호 : 현재 자막 번호(순서) 할당
+            trackNowIndex = Number(idInQue);
+            //구간 재생시 마지막 시간
+            endTimeInQue = endTime;
+            //구간 재생시 시작 시간
+            startTimeInQue = startTime;
+            //구간 재생시 자막
+            textInQue = text;
+
+            //자막 input text 에 현재 자막 셋팅
+            if(showChineseStatus){ 
+                document.getElementById('trackText').innerHTML = textInQue; 
+            }else{
+                document.getElementById('trackText').innerHTML = ""; 
+            }
+
+
+            //구간 재생시 부가정보 : 한글일때 - 한글보여줌
+            if(showKorStatus) subTextInQue = kor;
+            //구간 재생시 부가정보 : 단어일때 - 단어보여줌
+            if(showWordStatus) subTextInQue = word; 
+            //구간 재생시 부가정보 : 설명일때 - 설명보여줌
+            if(showDescriptionStatus) subTextInQue = description;
+            //모두다 꺼져 있을때 
+            if(!showKorStatus && !showWordStatus && !showDescriptionStatus) subTextInQue = ""; 
+            
+            //현재 재생되는 부가 정보 보여주기
+            document.getElementById('myTextArea').innerHTML = subTextInQue; 
+
+
+        }
+
+
+
+        /******************************************************************************************************
+         0.이름    : 무한반복 설정 함수
+         1.설명    : 해당 구간 무한반복을 설정한다. 
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function loopAction(){
+            console.log("#####  구간 무한 반복 함수 클릭  #####");
+
+            //무한반복이 꺼져있으면
+            if(!loopStatus){
+
+
+                //무한반복을 시작한다.
+                loopStatus = true;
+                //커스텀 팝업창
+                tempAlert("구간반복 시작",popUpShowTime);
+                //document.getElementById('btnLoop').innerHTML = "반복off";
+                $("#btnLoop").attr("class","btn btn-dark btn-lg");
+            //무한반복이 켜져있으면    
+            }else{
+                //커스텀 팝업창
+                tempAlert("구간반복 종료",popUpShowTime);
+                //무한반복을 종료한다..
+                loopStatus = false;
+                //document.getElementById('btnLoop').innerHTML = "반복on";
+                $("#btnLoop").attr("class","btn btn-light btn-lg");
+
+            }
+
+        }
+
+
+
+        /******************************************************************************************************
+         0.이름    : 자막 보여주기 or 끄기 함수
+         1.설명    : 해당 문장의 자막을 보여준다.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function showChinese(){
+            console.log("#####  자막보기 함수 클릭  #####");
+            //자막보기 꺼져있으면 - 켜기
+            if(!showChineseStatus){
+
+
+                //현재 재생되는 자막의 큐 자료구조
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('trackText').innerHTML = selectedTrackInfo['text'];  
+
+                //단어보기 시작한다.
+                showChineseStatus = true;
+                //document.getElementById('btnShowChinese').innerHTML = "자막off";
+                $("#btnShowChinese").attr("class","btn btn-primary btn-lg");
+            //자막보기 켜져있으면    - 끄기
+            }else{
+
+                //단어보기 종료한다..
+                showChineseStatus = false;
+                //document.getElementById('btnShowChinese').innerHTML = "자막on";
+                $("#btnShowChinese").attr("class","btn btn-secondary btn-lg");
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('trackText').innerHTML = "";  
+
+            }
+        }
+
+
+
+
+        /******************************************************************************************************
+         0.이름    : 문장 설명 보여주기 or 끄기 함수
+         1.설명    : 해당 문장의 설명을 보여 준다.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function showDescription(){
+            console.log("#####  설명보기 함수 클릭  #####");
+
+            //설명 텍스트 꺼져있으면 - 켜기
+            if(!showDescriptionStatus){
+
+                //현재 재생되는 자막의 큐 자료구조
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('myTextArea').innerHTML = selectedTrackInfo['description'];    
+
+                //설명 텍스트 시작한다.
+                showDescriptionStatus = true;
+                //document.getElementById('btnShowDescription').innerHTML = "설명off";
+                $("#btnShowDescription").attr("class","btn btn-primary btn-lg");
+                showKorStatus  = false;
+                //document.getElementById('btnShowKorean').innerHTML = "한글on";
+                $("#btnShowKorean").attr("class","btn btn-secondary btn-lg");
+
+                showWordStatus  = false;
+                //document.getElementById('btnShowWord').innerHTML = "단어on";
+                $("#btnShowWord").attr("class","btn btn-secondary btn-lg");
+
+
+            //설명 텍스트 켜져있으면 - 끄기    
+            }else{
+                //설명 텍스트 종료한다..
+                showDescriptionStatus = false;
+                //document.getElementById('btnShowDescription').innerHTML = "설명on";
+                $("#btnShowDescription").attr("class","btn btn-secondary btn-lg");
+                //현재 재생되는 부가 정보 끄기
+                document.getElementById('myTextArea').innerHTML = ""; 
+
+            }
+        }
+
+
+
+
+        /******************************************************************************************************
+         0.이름    : 한글 보여주기 or 끄기 함수
+         1.설명    : 해당문장의 한글을 보여준다.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function showKorean(){
+            console.log("##### 한글보기 함수 클릭  #####");
+            //한글 보여주기 꺼져있으면 - 켜기
+            if(!showKorStatus){
+
+                //현재 재생되는 자막의 큐 자료구조
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('myTextArea').innerHTML = selectedTrackInfo['kor'];    
+
+
+                //한글 보여주기 시작한다.
+                showKorStatus = true;
+                //document.getElementById('btnShowKorean').innerHTML = "한글off";
+                $("#btnShowKorean").attr("class","btn btn-primary btn-lg");
+                showWordStatus  = false;
+                //document.getElementById('btnShowWord').innerHTML = "단어on";
+                $("#btnShowWord").attr("class","btn btn-secondary btn-lg");
+                showDescriptionStatus = false;
+                //document.getElementById('btnShowDescription').innerHTML = "설명on";
+                $("#btnShowDescription").attr("class","btn btn-secondary btn-lg");
+
+
+                //한글 보여주기 켜져있으면 - 끄기   
+                }else{
+
+                //한글 보여주기 종료한다..
+                showKorStatus = false;
+                //document.getElementById('btnShowKorean').innerHTML = "한글on";
+                $("#btnShowKorean").attr("class","btn btn-secondary btn-lg");
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('myTextArea').innerHTML = ""; 
+
+            }
+        }
+
+        /******************************************************************************************************
+         0.이름    : 문장 단어 보여주기 or 끄기 함수
+         1.설명    : 해당 문장의 단어를 보여준다.
+         2.파라미터 : 
+        *******************************************************************************************************/
+        function showWord(){
+            console.log("#####  단어보기 함수 클릭  #####");
+            //단어보기 꺼져있으면 - 켜기
+            if(!showWordStatus){
+
+                //현재 재생되는 자막의 큐 자료구조
+                let selectedTrackInfo = trackInfoArray[trackNowIndex-1];
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('myTextArea').innerHTML = selectedTrackInfo['word'];  
+
+                //단어보기 시작한다.
+                showWordStatus = true;
+                //document.getElementById('btnShowWord').innerHTML = "단어off";
+                $("#btnShowWord").attr("class","btn btn-primary btn-lg");
+                showKorStatus  = false;
+                //document.getElementById('btnShowKorean').innerHTML = "한글on";
+                $("#btnShowKorean").attr("class","btn btn-secondary btn-lg");
+                showDescriptionStatus = false;
+                //document.getElementById('btnShowDescription').innerHTML = "설명on";
+                $("#btnShowDescription").attr("class","btn btn-secondary btn-lg");
+
+            //단어보기 켜져있으면    - 끄기
+            }else{
+
+                //단어보기 종료한다..
+                showWordStatus = false;
+                //document.getElementById('btnShowWord').innerHTML = "단어on";
+                $("#btnShowWord").attr("class","btn btn-secondary btn-lg");
+                //현재 재생되는 부가 정보 보여주기
+                document.getElementById('myTextArea').innerHTML = "";  
+
+            }
+        }
+
+
+
+
+        
+
+        /*
+        참고 사이트
+        https://www.html5rocks.com/ko/tutorials/track/basics/
+        https://codesandbox.io/embed/video-captions-3ocub
+        https://stackoverflow.com/questions/32043406/is-there-any-way-to-get-current-captions-text-from-video-tag-using-video-js
+        https://developer.mozilla.org/en-US/docs/Web/API/VTTCue
+        https://developer.mozilla.org/ko/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
+        */
+
+    </script>
+
+    <!-- 부트스트랩 라이브러리-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
