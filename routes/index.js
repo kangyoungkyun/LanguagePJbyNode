@@ -1,4 +1,5 @@
 var express = require('express');
+var loger = require('../logmodule.js');            //로그모듈
 var router = express.Router();
 
 /* 홈 */
@@ -19,3 +20,4 @@ router.get('/runVideo', function(req, res, next) {
 });
 
 module.exports = router;
+loger.info("메모리 로딩 완료. - index.js");

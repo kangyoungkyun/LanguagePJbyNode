@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var loger = require('./logmodule.js');            //로그모듈
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -48,4 +50,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+loger.info("서버 작동. - index.js");
 module.exports = app;
