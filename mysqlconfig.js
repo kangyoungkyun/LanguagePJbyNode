@@ -7,23 +7,23 @@ var mysql = require('mysql');
 
 
 //mysql 커넥터
-var client = mysql.createConnection({
-  host: "localhost",
-  user:'root',
-  password:'eorn1145@',
-  database:'test',
-  dateStrings: 'date'
-});
+// var client = mysql.createConnection({
+//   host: "localhost",
+//   user:'root',
+//   password:'eorn1145@',
+//   database:'test',
+//   dateStrings: 'date'
+// });
 
 
 //mysql 커넥터
-// var client = mysql.createConnection({
-//   host: "115.71.239.29",
-//   user:'kk12111',
-//   password:'1111',
-//   database:'mydb',
-//   dateStrings: 'date'
-// });
+var client = mysql.createConnection({
+  host: "115.71.239.29",
+  user:'kk12111',
+  password:'1111',
+  database:'langdb',
+  dateStrings: 'date'
+});
 
 
 module.exports = client;
