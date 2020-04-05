@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+            <!-- Bootstrap Core CSS -->
+            <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+            <!-- jQuery -->
+            <script src="../javascripts/jquery.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="../javascripts/bootstrap.min.js"></script>
+
+    <title>글보기</title>
+
+    <style>
+
+    @font-face { font-family: 'GmarketSansLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+    html body {
+        height: 100%;
+        font-family: 'GmarketSansLight';
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+
+  <br>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">중국어암기왕</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                          <li>
+                              <a href="/admin/showWriteSpeechPage">글작성</a>
+                          </li>
+                          <li>
+                              <a href="/admin/showReadSpeechPage">글관리</a>
+                          </li>
+                          <li>
+                              <a href="/admin/showWriteSpeechPage">미정</a>
+                          </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+
+   
+    
+
+    <h2>글관리</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">#</th>
+          <th class="text-center" scope="col">코드</th>
+          <th class="text-center" scope="col">제목</th>
+          <th class="text-center" scope="col">설명</th>
+          <th class="text-center" scope="col">장르</th>
+          <th class="text-center" scope="col">레벨</th>
+          <th class="text-center" scope="col">이미지 경로</th>
+          <th class="text-center" scope="col">태그</th>
+          <th class="text-center" scope="col">문장수</th>
+          <th class="text-center" scope="col">러닝타임</th>
+          <th class="text-center" scope="col">수정</th>
+        </tr>
+      </thead>
+      <tbody>
+
+          <% for (var i = 0; i < rows.length; i++) {  %>
+                    <tr>
+                          <td class="text-center"><%=(i + 1)%></td>
+                          <td class="text-center"><%=rows[i]['code']%></td>     
+                          <td class="text-center"><%=rows[i]['title']%></td>
+                          <td class="text-center"><%=rows[i]['description']%></td>     
+                          <td class="text-center"><%=rows[i]['type']%></td>
+                          <td class="text-center"><%=rows[i]['level']%></td>     
+                          <td class="text-center"><%=rows[i]['image']%></td>
+                          <td class="text-center"><%=rows[i]['tag']%></td>     
+                          <td class="text-center"><%=rows[i]['speech_count']%></td>
+                          <td class="text-center"><%=rows[i]['runing_time']%></td>
+                          <td class="text-center"><a href="/admin/modifySpeech?num=<%=rows[i]['id']%>" class="btn btn-default">수정</a></td>
+          
+                    </tr>  
+          <% } %>
+             
+      </tbody>
+    </table>
+
+
+ 
+
+    <hr>
+
+
+    <script>
+      // $(document).ready(function(){
+      //    //저장버튼 클릭
+      //    $(document).on('click', '#saveBtn', function () {
+
+      //       var code = $("#code").val();                                        //코드  pk
+      //       var title = $("#title").val();                                      //제목
+      //       var description = $("#description").val();                          //설명
+      //       var type = $("#type").val();                                        //장르 
+      //       var level = $("#level").val();                                      //레벨
+      //       var image = $("#image").val();                                      //이미지 경로
+      //       var tag = $("#tag").val();                                          //태그
+      //       var speech_count = $("#speech_count").val();                        //총 문장 개수
+      //       var runing_time = $("#runing_time").val();                         //러닝 타임
+
+      //       //서버로 전송 - /admin.js
+      //       $.ajax({
+      //           url: '/admin/saveWriteSpeech',
+      //           dataType: 'json',
+      //           type: 'post',
+      //           data: {
+      //             code: code,
+      //             title: title,
+      //             description: description,
+      //             type: type,
+      //             level: level,
+      //             image: image,
+      //             tag: tag,
+      //             speech_count: speech_count,
+      //             runing_time:runing_time
+      //           },
+      //           success: function (data) {
+      //               if (data['result'] == 'success') {
+      //                   alert(data['tocken']);
+      //                   location.reload();
+      //               }else if(data['result'] == 'fail'){
+      //                   alert(data['tocken']);
+      //               }
+      //           },
+      //           error: function (jqXHR, textStatus, err) {
+      //               //show error message
+      //               alert('죄송합니다. 작업중 오류가 발생했습니다. ' + "상태 : " + textStatus + ', error : ' + err);
+      //           }
+      //       });
+
+            
+      //      });
+      // });
+
+
+    </script>
+
+
+
+  </body>
+</html>

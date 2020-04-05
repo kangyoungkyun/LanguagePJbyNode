@@ -13,7 +13,6 @@ router.get('/showWriteSpeechPage', function(req, res, next) {
   
 });
 
-
 /* 글작성하기 - 저장*/
 router.post('/saveWriteSpeech', function(req, res, next) {
 
@@ -53,6 +52,38 @@ router.post('/saveWriteSpeech', function(req, res, next) {
   });
   
 });
+
+
+/* 글 관리하기 페이지 */
+router.get('/showReadSpeechPage', function(req, res, next) {
+
+
+    //테스트 쿼리문
+    var sql = 'SELECT * FROM langdb.speech;';
+
+
+    connection.query(sql, function (err, rows, results) {
+      
+    
+      //에러 처리
+      if(err){
+        loger.error('speech 테이블 조회 쿼리에 오류가 있습니다. - / - /admin.js');
+        loger.error(err);
+        throw err;
+        
+      }else{
+          //페이지 렌더링
+          res.render('readSpeech',{
+              title : '글관리',
+              rows:rows
+          });
+          
+      }
+    });
+  
+});
+
+
 
 
 /* 리스트 페이지로 이동 */
