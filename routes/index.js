@@ -10,7 +10,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 
   //테스트 쿼리문
-  var sql = 'SELECT * FROM test.testTbl;';
+  var sql = 'SELECT * FROM langdb.speech;';
 
 
   connection.query(sql, function (err, rows, results) {
