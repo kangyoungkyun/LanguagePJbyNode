@@ -12,7 +12,7 @@ var MySQLStore = require('express-mysql-session')(session);   //mysql session 2
 
 
 var indexRouter = require('./routes/index');                  //라우트 - 인덱스
-var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');                  //라우트 - 관리자
 
 var app = express();
 
@@ -58,7 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //라우터 미들웨어 설정 - / 경로로 들어오면 여기서 모두 처리
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 
 

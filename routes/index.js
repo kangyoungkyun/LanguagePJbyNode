@@ -16,59 +16,6 @@ router.get('/', function(req, res, next) {
   connection.query(sql, function (err, rows, results) {
     
   
-    console.log(err);         // 에러가 없으면 null
-
-    console.log(rows);        // 배열안에 객체로 들어가 있다.        
-    /*
-    [
-      RowDataPacket { title: '제목1', description: '설명 1 번' },
-      RowDataPacket { title: '제목1', description: '설명 1 번' },
-      RowDataPacket { title: '제목2', description: '설명 2 번' },
-      RowDataPacket { title: '제목3', description: '설명 3 번' },
-      RowDataPacket { title: '제목3', description: '설명 3 번' }
-    ]
-    */
-    console.log(results);
-
-
-    /*
-  [
-  FieldPacket {
-    catalog: 'def',
-    db: 'test',
-    table: 'testTbl',
-    orgTable: 'testtbl',
-    name: 'title',
-    orgName: 'title',
-    charsetNr: 33,
-    length: 135,
-    type: 253,
-    flags: 0,
-    decimals: 0,
-    default: undefined,
-    zeroFill: false,
-    protocol41: true
-  },
-  FieldPacket {
-    catalog: 'def',
-    db: 'test',
-    table: 'testTbl',
-    orgTable: 'testtbl',
-    name: 'description',
-    orgName: 'description',
-    charsetNr: 33,
-    length: 135,
-    type: 253,
-    flags: 0,
-    decimals: 0,
-    default: undefined,
-    zeroFill: false,
-    protocol41: true
-  }
-]
-
-    */
-
     //에러 처리
     if(err){
       
