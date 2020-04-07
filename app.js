@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var multer = require('multer')                              //파일관련 모듈
 var loger = require('./logmodule.js');                        //로그모듈
 var connection = require('./mysqlconfig.js');                   //mysql 모듈
 

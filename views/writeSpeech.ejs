@@ -92,7 +92,10 @@
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="image"  placeholder="이미지">
+        <!-- <input type="text" class="form-control" id="image"  placeholder="이미지"> -->
+          <form enctype="multipart/form-data" id = "imageform">
+            <input type="file" class="form-control-file" id="fileupload" name="fileupload">
+         </form>
       </div>
 
       <div class="form-group">
@@ -122,12 +125,59 @@
          //저장버튼 클릭
          $(document).on('click', '#saveBtn', function () {
 
+        //파일업로드 사진 유무 확인
+        var fileupload = $("#fileupload").val();      
+        console.log("file : " + fileupload);
+        if(fileupload == null || fileupload == undefined || fileupload == ''){
+            alert("사진을 확인해주세요.");
+        }else{
+            saveImage();
+        }  
+           });
+      });
+
+
+//이미지 저장
+function saveImage() {
+
+
+var formData = new FormData();
+formData.append('fileupload', document.getElementById('fileupload').files[0]);
+
+$.ajax({
+    url: '/admin/saveimage',
+    type: "POST",
+    processData: false,
+    contentType: false,
+    data: formData,
+    async : false,
+    success: function (data) {
+        if (data['result'] == 'success') {
+            console.log('사진업로드!성공!');
+            var imagepath = data['path'];
+            
+            //이미지 패스 넘겨주기
+            saveContent(imagepath);
+        }
+    },
+    error: function (jqXHR, textStatus, err) {
+        //show error message
+        alert('죄송합니다. 작업중 오류가 발생했습니다.' + "상태 : " + textStatus + ', 에러 : ' + err);
+    }
+});
+}
+
+
+
+    //데이터 저장
+    function saveContent(imagepath) {
+
             var code = $("#code").val();                                        //코드  pk
             var title = $("#title").val();                                      //제목
             var description = $("#description").val();                          //설명
             var type = $("#type").val();                                        //장르 
             var level = $("#level").val();                                      //레벨
-            var image = $("#image").val();                                      //이미지 경로
+            var image = imagepath;                                              //이미지 경로
             var tag = $("#tag").val();                                          //태그
             var speech_count = $("#speech_count").val();                        //총 문장 개수
             var runing_time = $("#runing_time").val();                         //러닝 타임
@@ -162,10 +212,8 @@
                 }
             });
 
-            
-           });
-      });
-
+      
+    }
 
     </script>
 

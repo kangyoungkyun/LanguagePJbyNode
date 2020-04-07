@@ -14,6 +14,16 @@
             "date": 1586012632428,
             "name": "config/log/error/err._yyyy-04-Su.4/5/2020og",
             "hash": "4d5cf4a7c28273e445efe53bef04891c"
+        },
+        {
+            "date": 1586182305833,
+            "name": "config/log/error/err._yyyy-04-Mo.4/6/2020og",
+            "hash": "f842b1aae53e1367316f7cd2e4d4f88f"
+        },
+        {
+            "date": 1586185828894,
+            "name": "config/log/error/err._yyyy-04-Tu.4/7/2020og",
+            "hash": "294e8067f8478e46e74e8fe34273b692"
         }
     ]
 }
